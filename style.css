@@ -1,0 +1,44 @@
+html {
+	font-family: Montserrat, sans-serif;
+	box-sizing: border-box;
+	--color-primary: #35b5ff;
+	--color-primary-text: #ffffff;
+}
+
+body,
+body * {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: aqua;
+}
+
+.greeting {
+	font-weight: 900;
+	padding: 6em 4em;
+}
+#coco {
+	height: 500px;
+	width: 900px;
+}
+
+nav > a {
+	margin: 40px 0 0 40px;
+	display: block;
+	text-align: center;
+	border: solid #35b5ff;
+	color: yellow;
+	background-color: #35b5ff;
+	height: 60px;
+	font-size: 2em;
+	font-weight: bold;
+	border-radius: 15px;
+	box-shadow: 5px 5px 15px 10px;
+}
+
+.disclaimer {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
