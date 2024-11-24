@@ -1,11 +1,64 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Luis Aceituno</title>
-    </head>
-    <body style="height:80vh; text-align:center; align-content:center">
-        <h1>Hi</h1>
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luis Aceituno</title>
+</head>
+
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+</style>
+
+<body id="body">
+    <div style="height: 80%; align-content: center; text-align: center;">
+        <h1 id="hi">Hi</h1>
+    </div>
+</body>
+<script>
+    const bodyElement = document.getElementById("body")
+    const hiElement = document.getElementById("hi")
+    let baseHue = Math.floor(Math.random() * 360)
+    let mouseY = 0
+    let mouseX = 0
+
+    function updateColors() {
+        const bgHue = (baseHue + (mouseX + mouseY / 3)) % 360
+        const textHue = (bgHue + 180) % 360
+        bodyElement.style.backgroundColor = `lch(100 50 ${bgHue})`
+        hiElement.style.color = `lch(50 50 ${textHue})`
+    }
+
+    document.addEventListener("mousemove", (event) => {
+        mouseX = event.clientX
+        mouseY = event.clientY
+        updateColors()
+    })
+
+    document.addEventListener("click", (event) => {
+        mouseX = event.clientX
+        mouseY = event.clientY
+        updateColors()
+    })
+
+    updateColors()
+</script>
+
 </html>
